@@ -10,4 +10,11 @@ describe('HelloWorld.vue', () => {
     })
     expect(wrapper.text()).to.include(msg)
   })
+  it('renders data.test when passed', () => {
+    const test = 'This is lorem ipsum.'
+    const wrapper = shallowMount(HelloWorld, {
+      propsData: { test }
+    })
+    expect(wrapper.text()).to.include(test)
+  })
 })
