@@ -11,6 +11,11 @@ export const routes = [
     component: lazyLoad('Home')
   },
   {
+    path: '/project',
+    name: 'project',
+    component: lazyLoad('Project')
+  },
+  {
     path: '/about',
     name: 'about',
     component: lazyLoad('About')
