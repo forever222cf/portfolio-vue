@@ -19,17 +19,12 @@ export default {
         {
           id: '1',
           href: '/',
-          label: 'Home'
+          label: 'All projects'
         },
         {
           id: '2',
-          href: '/project',
-          label: 'Project'
-        },
-        {
-          id: '3',
           href: '/about',
-          label: 'About'
+          label: 'About me'
         }
       ]
     }
@@ -41,10 +36,6 @@ export default {
 @import './../../assets/scss/base/variables';
 
 .p-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 2rem;
   &__item {
     font-weight: 700;
     color: $color-text;

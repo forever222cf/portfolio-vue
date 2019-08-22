@@ -20,8 +20,8 @@
 ==================================*/
 
 $color-main: #3878f3;
-$color-text: #2c2f37;
-$color-title: #191d28;
+$color-text: #333;
+$color-title: #111;
 $color-bg: #777;
 $color-black: #000;
 $color-white: #fff;
@@ -34,6 +34,8 @@ $color-white: #fff;
 ======================================*/
 
 $ff-Poppins: Poppins, sans-serif;
+$ff-Roboto: Roboto, sans-serif;
+$ff-RobotoSlab: 'Roboto Slab', serif;
 $line-height: 1.42858;
 
 /*=====  End of 02. Typography  ======*/
@@ -45,6 +47,7 @@ $line-height: 1.42858;
 
 $z-index-headbar: 100;
 $z-index-modal: 150;
+$z-index-initial: 200;
 
 /*=====  End of 03. Z Index  ======*/
 

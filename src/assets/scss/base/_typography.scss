@@ -27,8 +27,11 @@
   }
 }
 
-@include generateFont('Poppins', 'Medium', 500, 'normal');
-@include generateFont('Poppins', 'Regular');
+@include generateFont('Roboto', 'Bold', 700);
+@include generateFont('Roboto', 'Medium', 500);
+@include generateFont('Roboto', 'Regular');
+@include generateFont('RobotoSlab', 'Bold', 700);
+@include generateFont('RobotoSlab', 'Regular');
 
 /*=====  End of 01. Font face  ======*/
 

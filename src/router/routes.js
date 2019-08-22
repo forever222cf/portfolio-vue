@@ -7,8 +7,8 @@ const lazyLoad = view => () => import(`@/views/${view}.vue`)
 export const routes = [
   {
     path: '/',
-    name: 'home',
-    component: lazyLoad('Home')
+    name: 'projects',
+    component: lazyLoad('Projects')
   },
   {
     path: '/project',

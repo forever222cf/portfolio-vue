@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Menu />
+    <Headbar v-if="!isInitialing" />
     <main id="main">
       <transition name="fade" mode="out-in">
         <router-view />
@@ -10,10 +10,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'p-app',
   components: {
-    Menu: () => import('@/components/Menu/Menu.vue')
+    Headbar: () => import('@/components/Headbar/Headbar.vue')
+  },
+  computed: {
+    ...mapState({
+      isInitialing: state => state.isInitialing
+    })
   }
 }
 </script>

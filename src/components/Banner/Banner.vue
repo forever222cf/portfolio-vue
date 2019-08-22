@@ -1,8 +1,8 @@
 <template>
   <div class="p-banner">
     <div class="p-banner__info">
-      <div class="p-banner__info-name">PHAM HOANG BAO LONG</div>
-      <div class="p-banner__info-title">Senior Front End Developer</div>
+      <div class="p-banner__info-name">JOHN DOE</div>
+      <div class="p-banner__info-title">Sale Manager</div>
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
 
 .p-banner {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   background-color: $color-bg;
   background-size: cover;
   background-position: center;
@@ -37,6 +37,10 @@ export default {
     position: relative;
     z-index: 2;
     color: $color-white;
+    &-name {
+      font-size: 1vh;
+      font-weight: 700;
+    }
   }
 }
 </style>

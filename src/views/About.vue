@@ -1,16 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <img alt="Vue logo" src="../assets/images/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="p-about">
+    <Banner />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'about',
+  name: 'p-about',
   components: {
-    HelloWorld: () => import('@/components/HelloWorld/HelloWorld.vue')
+    Banner: () => import('@/components/Banner/Banner.vue')
   }
 }
 </script>
