@@ -41,6 +41,9 @@ export default {
 @import './../../assets/scss/base/variables';
 
 .p-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
   padding: 2rem;
   &__item {
     font-weight: 700;
