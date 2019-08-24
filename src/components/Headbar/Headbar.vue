@@ -24,8 +24,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './../../assets/scss/base/variables';
-
 .p-headbar {
   position: fixed;
   z-index: $z-index-headbar;

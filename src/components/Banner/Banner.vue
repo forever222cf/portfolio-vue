@@ -14,8 +14,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './../../assets/scss/base/variables';
-
 .p-banner {
   position: relative;
   height: 100vh;

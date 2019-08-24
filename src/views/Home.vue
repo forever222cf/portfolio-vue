@@ -1,11 +1,14 @@
 <template>
-  <div class="p-projects">
-  </div>
+  <div class="p-home"></div>
 </template>
 
 <script>
 export default {
-  name: 'p-projects'
+  name: 'p-home',
+  data () {
+    return {
+    }
+  }
 }
 </script>
 

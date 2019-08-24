@@ -41,8 +41,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './../../assets/scss/base/variables';
-
 @keyframes bottom-up {
   from {
     top: 100%;

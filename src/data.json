@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": "educhain",
+      "projectName": "EduChain",
+      "href": "http://wp.swlabs.co/educhain/",
+      "description": "EduChain | Educaton LMS WordPress, a fast & responsive Education LMS WP Theme which is that powers your education center, elearning system, academy, training college, university, course marketplace, any education website to new heights."
+    },
+    {
+      "id": "minimalist",
+      "projectName": "Minimalist",
+      "href": "http://wp.swlabs.co/minimalist/",
+      "description": "Minimalist | Portfolio WordPress Theme is great for any architect, portfolio, creative website."
+    },
+    {
+      "id": "architect",
+      "projectName": "Architect",
+      "href": "http://wp.swlabs.co/architect/",
+      "description": "Architect | Architecture & Interior Design Creative Portfolio WordPress Theme is great for any architect, interior design, home decoration, portfolio, construction website."
+    },
+    {
+      "id": "flexi",
+      "projectName": "Flexi",
+      "href": "http://wp.swlabs.co/flexi/",
+      "description": "Flexi | Multi-Purpose Flexible WordPress Theme is greate for any business website; hundreds of elements styles have been developed to help you to create any business website within mins."
+    },
+    {
+      "id": "endlesslove",
+      "projectName": "EndlessLove",
+      "href": "http://wp.swlabs.co/endlesslove/",
+      "description": "Endless Love | Wedding WordPress Theme, powering your care for your lover, wedding, happiness celebration & website to new heights."
+    },
+    {
+      "id": "solala",
+      "projectName": "Solala",
+      "href": "http://wp.swlabs.co/solala/",
+      "description": "Solala Music WP, Music WordPress Theme, powering your new music, band, artist, music industry, fanclub website to new heights."
+    },
+    {
+      "id": "lawplus",
+      "projectName": "LawPlus",
+      "href": "http://wp.swlabs.co/lawplus/",
+      "description": "Law Plus Law WP - Responsive Law WordPress Theme is a clean and modern WordPress theme for law firm, attorneys, business, justice, law, lawyer, lawyers, legal office, politician and many others relevant businesses that provide advocate services in various fields."
+    },
+    {
+      "id": "appexpo",
+      "projectName": "AppExpo",
+      "href": "http://wp.swlabs.co/appexpo/",
+      "description": "App Landing Page WordPress Theme (App Showcase, App Store) – App Expo is a creative & unique Multipurpose WordPress Theme for application introduction. You can use it as An Application Exhibition, Expo, landing page and Appstore Affiliates."
+    },
+    {
+      "id": "transera",
+      "projectName": "Transera",
+      "href": "http://wp.swlabs.co/transera/",
+      "description": "Logistics WP Transera – Logistics WordPress Theme is a stylish, elegant, versatile & powerful WordPress Theme for transportation, logistics, cargo, truck, mover, warehouse, delivery, shipping, freight services..."
+    },
+    {
+      "id": "buildplus",
+      "projectName": "BuildPlus",
+      "href": "http://swlabs.co/buildplus/html",
+      "description": "BuildPlus - Building & Construction Business is a modern & fully responsive multiconcept template which has been designed for building & construction business, cleaning, plumbing, etc..."
+    }
+  ]
+}

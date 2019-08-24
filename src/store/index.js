@@ -6,9 +6,8 @@ import { UPDATE_INITIAL_STATE } from './action-types'
 
 Vue.use(Vuex)
 
-
 const state = {
-  isInitialing: true
+  isInitialing: false
 }
 
 const mutations = {

@@ -33,8 +33,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './../../assets/scss/base/variables';
-
 .p-menu {
   &__item {
     font-weight: 700;
