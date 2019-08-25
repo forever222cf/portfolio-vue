@@ -2,23 +2,23 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import example from './modules/example'
-import { UPDATE_INITIAL_STATE } from './action-types'
+import { UPDATE_WELCOME_STATE } from './action-types'
 
 Vue.use(Vuex)
 
 const state = {
-  isInitialing: false
+  isWelcoming: true
 }
 
 const mutations = {
-  [UPDATE_INITIAL_STATE] (state, payload) {
-    state.isInitialing = payload
+  [UPDATE_WELCOME_STATE] (state, payload) {
+    state.isWelcoming = payload
   }
 }
 
 const actions = {
-  [UPDATE_INITIAL_STATE] ({ commit }, payload) {
-    commit(UPDATE_INITIAL_STATE, payload)
+  [UPDATE_WELCOME_STATE] ({ commit }, payload) {
+    commit(UPDATE_WELCOME_STATE, payload)
   }
 }
 

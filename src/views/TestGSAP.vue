@@ -1,18 +1,21 @@
 <template>
-  <div class="p-gsap"></div>
+  <div class="p-gsap">
+    <!-- <Welcome /> -->
+  </div>
 </template>
 
 <script>
-import { TweenMax } from 'gsap'
-
 export default {
   name: 'p-gsap',
-  data () {
-    return {
-    }
+  components: {
+    // Welcome: () => import('@/components/Welcome/Welcome.vue')
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.p-gsap {
+  // min-height: 100vh;
+  // background-color: $color-bg;
+}
 </style>

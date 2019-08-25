@@ -11,6 +11,9 @@
 </template>
 
 <script>
+// Use in:
+//  - @/components/Headbar/Headbar.vue
+
 export default {
   name: 'p-menu',
   data () {
@@ -34,16 +37,11 @@ export default {
 
 <style lang="scss" scoped>
 .p-menu {
+  display: flex;
   &__item {
     font-weight: 700;
-    color: $color-text;
-    &:not(:last-child) {
-      &:after {
-        content: '|';
-        color: $color-text;
-        padding: 0 0.5rem;
-      }
-    }
+    padding: 0.5rem 1rem;
+    color: $color-white;
     &:hover {
       color: $color-main;
     }

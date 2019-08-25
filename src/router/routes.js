@@ -23,6 +23,6 @@ export const routes = [
   {
     path: '/gsap',
     name: 'gsap',
-    components: lazyLoad('TestGSAP')
+    component: lazyLoad('TestGSAP')
   }
 ]

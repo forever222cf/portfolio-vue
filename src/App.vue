@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <Headbar v-if="!isInitialing" /> -->
-    <!-- <InitialLoader /> -->
-    <main id="main">
+    <Welcome />
+    <Headbar v-if="!isWelcoming" />
+    <main id="main" v-if="!isWelcoming">
       <transition name="fade" mode="out-in">
         <router-view />
       </transition>
@@ -16,12 +16,12 @@ import { mapState } from 'vuex'
 export default {
   name: 'p-app',
   components: {
-    // Headbar: () => import('@/components/Headbar/Headbar.vue'),
-    // InitialLoader: () => import('@/components/InitialLoader/InitialLoader.vue')
+    Headbar: () => import('@/components/Headbar/Headbar.vue'),
+    Welcome: () => import('@/components/Welcome/Welcome.vue')
   },
   computed: {
     ...mapState({
-      isInitialing: state => state.isInitialing
+      isWelcoming: state => state.isWelcoming
     })
   }
 }

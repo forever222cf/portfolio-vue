@@ -1,13 +1,13 @@
 <template>
   <div class="p-logo">
-    <div class="p-logo__text">P</div>
-    <div class="p-logo__text">H</div>
-    <div class="p-logo__text">B</div>
     <div class="p-logo__text">L</div>
   </div>
 </template>
 
 <script>
+// Use in:
+//  - @/components/Headbar/Headbar.vue
+
 export default {
   name: 'p-logo'
 }
@@ -15,12 +15,16 @@ export default {
 
 <style lang="scss" scoped>
 .p-logo {
-  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 700;
+  color: $color-white;
+  border: 2px solid $color-white;
+  font-family: $ff-RobotoSlab;
   display: flex;
-  flex-wrap: wrap;
-  &__text {
-    flex: 1 0 50%;
-    max-width: 50%;
-  }
+  justify-content: center;
+  align-items: center;
 }
 </style>
