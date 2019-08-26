@@ -24,12 +24,12 @@
   &-enter {
     opacity: 0;
     &-active {
-      transition: opacity 1s;
+      transition: opacity 0.5s;
     }
   }
   &-leave {
     &-active {
-      transition: opacity 1s;
+      transition: opacity 0.5s;
     }
     &-to {
       opacity: 0;

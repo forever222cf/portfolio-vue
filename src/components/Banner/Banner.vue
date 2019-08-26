@@ -1,8 +1,10 @@
 <template>
   <div class="p-banner">
     <div class="p-banner__info">
-      <div class="p-banner__info-name">PHAM HOANG BAO LONG</div>
-      <div class="p-banner__info-title">Senior Front End Developer</div>
+      <div class="p-banner__info-name">LOREM IPSUM DOLOR SIT AMET</div>
+      <!-- <div class="p-banner__info-name">PHAM HOANG BAO LONG</div> -->
+      <div class="p-banner__info-title">Consectetur Adipiscing Elit</div>
+      <!-- <div class="p-banner__info-title">Senior Front End Developer</div> -->
     </div>
     <div class="p-banner__avatar"></div>
   </div>
@@ -30,7 +32,7 @@ export default {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('./../../assets/images/avatar-02.jpg');
+    background-image: url('./../../assets/images/placeholder-03.jpeg');
     &:before {
       position: absolute;
       z-index: 1;
