@@ -60,5 +60,83 @@
       "href": "http://swlabs.co/buildplus/html",
       "description": "BuildPlus - Building & Construction Business is a modern & fully responsive multiconcept template which has been designed for building & construction business, cleaning, plumbing, etc..."
     }
+  ],
+  "skills": [
+    {
+      "id": "technical-skills",
+      "label": "Technical Skills",
+      "list": [
+        {
+          "id": "html",
+          "label": "HTML5, Jade, Pug"
+        },
+        {
+          "id": "css",
+          "label": "CSS3, LESS, SASS, SCSS"
+        },
+        {
+          "id": "js",
+          "label": "React Js, Vue Js, jQuery"
+        },
+        {
+          "id": "package-mangement",
+          "label": "NPM, Yarn"
+        },
+        {
+          "id": "node-js",
+          "label": "NodeJs (NestJs)"
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "label": "Database Management System",
+      "list": [
+        {
+          "id": "sql-server",
+          "label": "SQL Server"
+        },
+        {
+          "id": "my-sql",
+          "label": "MySQL"
+        },
+        {
+          "id": "mongo-db",
+          "label": "Mongo DB"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "label": "Tools",
+      "list": [
+        {
+          "id": "ide",
+          "label": "Sublime Text 3, Visual Studio Code"
+        },
+        {
+          "id": "source-version-control",
+          "label": "Git Bash, Source Tree, GitKraken"
+        },
+        {
+          "id": "ui",
+          "label": "Photoshop, After Effect"
+        }
+      ]
+    },
+    {
+      "id": "operation-system",
+      "label": "Operation System",
+      "list": [
+        {
+          "id": "windows",
+          "label": "Windows"
+        },
+        {
+          "id": "linux",
+          "label": "Linux"
+        }
+      ]
+    }
   ]
 }
