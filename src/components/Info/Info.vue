@@ -21,4 +21,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.p-info {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1400px;
+}
 </style>

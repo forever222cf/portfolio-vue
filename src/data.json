@@ -61,6 +61,14 @@
       "description": "BuildPlus - Building & Construction Business is a modern & fully responsive multiconcept template which has been designed for building & construction business, cleaning, plumbing, etc..."
     }
   ],
+
+  "introductions": [
+    {
+      "id": "01",
+      "text": "Sed lacinia felis metus, ut efficitur lacus eleifend vitae. Aenean pharetra ultricies nulla, id placerat ex bibendum eget. Nullam scelerisque, sapien id commodo cursus, dui nisl eleifend arcu, vel consectetur ligula arcu quis ante. Mauris id ultricies lectus. Sed eget laoreet tellus. Ut sit amet felis a augue iaculis posuere. Quisque fermentum, dolor in vehicula semper, nisl ante varius augue, ac cursus ante velit nec nisi. Donec condimentum, nibh vel hendrerit interdum, lectus mauris porta eros, eu accumsan nibh felis in dui. Praesent nec leo porttitor, venenatis massa eget, consectetur augue."
+    }
+  ],
+
   "skills": [
     {
       "id": "technical-skills",
@@ -137,6 +145,65 @@
           "label": "Linux"
         }
       ]
+    }
+  ],
+  
+  "languages": [
+    {
+      "id": "vietnamese",
+      "label": "Vietnamese",
+      "status": "Mother tongue"
+    },
+    {
+      "id": "english",
+      "label": "English",
+      "status": "Read, Listen, Speak, Write"
+    }
+  ],
+
+  "hobbies": [
+    {
+      "id": "basketball",
+      "label": "Basketball",
+      "icon": "IconBasketball"
+    },
+    {
+      "id": "football",
+      "label": "Football",
+      "icon": "IconFootball"
+    },
+    {
+      "id": "music",
+      "label": "Music",
+      "icon": "IconMusic"
+    },
+    {
+      "id": "travel",
+      "label": "Travel",
+      "icon": "IconTravel"
+    }
+  ],
+
+  "personalities": [
+    {
+      "id": "friendly",
+      "label": "Friendly"
+    },
+    {
+      "id": "enthusiastic",
+      "label": "Enthusiastic"
+    },
+    {
+      "id": "responsible",
+      "label": "Responsible"
+    },
+    {
+      "id": "funny",
+      "label": "Funny"
+    },
+    {
+      "id": "outgoing",
+      "label": "Outgoing"
     }
   ]
 }

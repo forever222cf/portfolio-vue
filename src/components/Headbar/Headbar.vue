@@ -33,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .p-headbar {
   position: fixed;
-  position: absolute;
+  // position: absolute;
   z-index: $z-index-headbar;
   top: 0;
   left: 0;

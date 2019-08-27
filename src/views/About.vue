@@ -2,19 +2,29 @@
   <div class="p-about">
     <Banner />
     <Info title="Introduction">
-      <p>Sed lacinia felis metus, ut efficitur lacus eleifend vitae. Aenean pharetra ultricies nulla, id placerat ex bibendum eget. Nullam scelerisque, sapien id commodo cursus, dui nisl eleifend arcu, vel consectetur ligula arcu quis ante. Mauris id ultricies lectus. Sed eget laoreet tellus. Ut sit amet felis a augue iaculis posuere. Quisque fermentum, dolor in vehicula semper, nisl ante varius augue, ac cursus ante velit nec nisi. Donec condimentum, nibh vel hendrerit interdum, lectus mauris porta eros, eu accumsan nibh felis in dui. Praesent nec leo porttitor, venenatis massa eget, consectetur augue.</p>
+      <p v-for="item in introductions" :key="item.id">{{ item.text }}</p>
     </Info>
     <Info title="Skills">
-      <div v-for="item in skills" :key="item.id">{{ item.label }}</div>
+      <div v-for="group in skills" :key="group.id">
+        <strong>{{ group.label }}</strong>
+        <div v-for="item in group.list" :key="item.id">{{ item.label }}</div>
+      </div>
     </Info>
-    <Info title="Languages"></Info>
-    <Info title="Hobbies"></Info>
-    <Info title="Personalities"></Info>
+    <Info title="Languages">
+      <div v-for="item in languages" :key="item.id">{{ item.label }} | {{ item.status }}</div>
+    </Info>
+    <Info title="Hobbies">
+      <div v-for="item in hobbies" :key="item.id">{{ item.label }}</div>
+    </Info>
+    <Info title="Personalities">
+      <div v-for="item in personalities" :key="item.id">{{ item.label }}</div>
+    </Info>
   </div>
 </template>
 
 <script>
-import { skills } from '@/data.json'
+import { introductions, skills, languages, hobbies, personalities } from '@/data.json'
+
 export default {
   name: 'p-about',
   components: {
@@ -23,7 +33,11 @@ export default {
   },
   data () {
     return {
-      skills
+      introductions,
+      skills,
+      languages,
+      hobbies,
+      personalities
     }
   }
 }
