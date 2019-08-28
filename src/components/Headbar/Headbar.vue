@@ -51,9 +51,9 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.75rem 5rem;
+  padding: 2vh 5rem;
   margin: 0 auto;
-  min-height: 4rem;
+  min-height: 10vh;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;

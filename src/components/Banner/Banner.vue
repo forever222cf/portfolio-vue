@@ -24,7 +24,7 @@ export default {
   display: flex;
   height: 100vh;
   color: $color-white;
-  background-color: $color-title;
+  background-color: darken($color-bg, 10%);
   &__avatar {
     position: relative;
     flex: 1 0 50%;
@@ -42,12 +42,11 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: adjust-color($color-black, $alpha: -0.2);
+      background-color: adjust-color($color-black, $alpha: -0.3);
     }
   }
   &__info {
-    padding-left: 5rem;
-    padding-right: 2rem;
+    padding: 0 5rem;
     flex: 1 0 50%;
     max-width: 50%;
     height: 100%;
