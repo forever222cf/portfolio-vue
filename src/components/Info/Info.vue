@@ -22,8 +22,21 @@ export default {
 
 <style lang="scss" scoped>
 .p-info {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin: 0 auto;
+  width: 85%;
   max-width: 1400px;
+  &:not(:last-child) {
+    padding-bottom: 4rem;
+  }
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  &__content {
+
+  }
 }
 </style>

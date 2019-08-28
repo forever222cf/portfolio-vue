@@ -24,7 +24,7 @@ export default {
   display: flex;
   height: 100vh;
   color: $color-white;
-  background-color: $color-bg;
+  background-color: $color-title;
   &__avatar {
     position: relative;
     flex: 1 0 50%;
@@ -32,6 +32,7 @@ export default {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url('./../../assets/images/avatar-02.jpg');
     background-image: url('./../../assets/images/placeholder-03.jpeg');
     &:before {
       position: absolute;

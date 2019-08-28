@@ -6,6 +6,8 @@ import store from './store'
 // App style
 import './assets/scss/main.scss'
 
+import './directives'
+
 Vue.config.productionTip = false
 
 new Vue({

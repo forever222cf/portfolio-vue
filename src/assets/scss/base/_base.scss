@@ -14,6 +14,8 @@ body {
   line-height: $line-height;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: $color-white;
+  background-color: $color-bg;
 }
 
 a {

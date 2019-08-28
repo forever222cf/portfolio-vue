@@ -1,5 +1,5 @@
 <template>
-  <div class="p-headbar">
+  <div :class="headbarClass" v-scroll="handleScroll">
     <div class="p-headbar__logo">
       <Logo />
     </div>
@@ -25,6 +25,20 @@ export default {
   },
   data () {
     return {
+      isPassBanner: false
+    }
+  },
+  computed: {
+    headbarClass () {
+      return {
+        'p-headbar': true,
+        'p-headbar--stick': this.isPassBanner
+      }
+    }
+  },
+  methods: {
+    handleScroll (event, el) {
+      this.isPassBanner = window.scrollY > window.innerHeight - el.clientHeight
     }
   }
 }
@@ -33,16 +47,20 @@ export default {
 <style lang="scss" scoped>
 .p-headbar {
   position: fixed;
-  // position: absolute;
   z-index: $z-index-headbar;
   top: 0;
   left: 0;
   right: 0;
   padding: 0.75rem 5rem;
   margin: 0 auto;
-  min-height: 6rem;
+  min-height: 4rem;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
+  &--stick {
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: adjust-color($color-bg, $alpha: -0.3);
+  }
   &__menu {
     margin-left: 4rem;
   }
