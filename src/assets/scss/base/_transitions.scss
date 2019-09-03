@@ -93,7 +93,7 @@
 
 
 /*======================================
-=            03. Slide Left            =
+=            04. Slide Left            =
 ======================================*/
 
 .slide-left {
@@ -115,4 +115,54 @@
   }
 }
 
-/*=====  End of 03. Slide Left  =====*/
+/*=====  End of 04. Slide Left  =====*/
+
+
+/*====================================
+=            05. Slide Up            =
+====================================*/
+
+.slide-up {
+  &-enter {
+    transform: translateY(100%);
+    &-active {
+      transition: all 1s linear;
+    }
+  }
+  &-leave {
+    &-active {
+      transition: all 1s linear;
+    }
+    &-to {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+/*=====  End of 05. Slide Up  ======*/
+
+
+
+/*======================================
+=            06. Slide Down            =
+======================================*/
+
+.slide-down {
+  &-enter {
+    transform: translateY(-100%);
+    &-active {
+      transition: all 1s linear;
+    }
+  }
+  &-leave {
+    &-active {
+      transition: all 1s linear;
+    }
+    &-to {
+      transform: translateY(100%);
+    }
+  }
+}
+
+/*=====  End of 06. Slide Down  ======*/
+

@@ -10,6 +10,7 @@
 body {
   font-size: 1rem;
   min-height: 100vh;
+  overflow: hidden;
   font-family: $ff-Roboto;
   line-height: $line-height;
   -webkit-font-smoothing: antialiased;

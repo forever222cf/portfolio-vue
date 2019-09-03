@@ -9,7 +9,11 @@
 
 <script>
 // Use in:
-//  - @/views/About.vue
+//  - @/components/About/Introduction.vue
+//  - @/components/About/Skills.vue
+//  - @/components/About/Languages.vue
+//  - @/components/About/Hobbies.vue
+//  - @/components/About/Personalities.vue
 
 export default {
   name: 'p-info',

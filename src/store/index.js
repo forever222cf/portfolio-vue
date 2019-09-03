@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import example from './modules/example'
+import about from './modules/about'
+
 import { UPDATE_WELCOME_STATE } from './action-types'
 
 Vue.use(Vuex)
@@ -27,6 +29,7 @@ export default new Vuex.Store({
   mutations,
   actions,
   modules: {
-    example
+    example,
+    about
   }
 })

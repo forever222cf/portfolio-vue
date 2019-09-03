@@ -1,78 +1,83 @@
 <template>
-  <div class="p-about" @wheel="handleWheel">
-    <transition name="slide" mode="out-in">
-      <Section v-show="selectedSection === 'banner'">
-        <Banner />
+  <div class="p-about" @wheel.stop="handleWheel">
+    <transition :name="slideDirection" mode="out-in" v-for="item in sections" :key="item.id">
+      <Section v-show="currentPosition === item.position">
+        <component :is="item.component"></component>
       </Section>
     </transition>
-    <transition name="slide" mode="out-in">
-      <Section v-show="selectedSection === 'intro'">
-        <Info title="Introduction">
-          <p v-for="item in introductions" :key="item.id">{{ item.text }}</p>
-        </Info>
-      </Section>
-    </transition>
-    <!-- <Section>
-      <Info title="Skills">
-        <div class="p-skills">
-          <div class="p-skills__group" v-for="group in skills" :key="group.id">
-            <strong>{{ group.label }}</strong>
-            <div v-for="item in group.list" :key="item.id">{{ item.label }}</div>
-          </div>
-        </div>
-      </Info>
-    </Section>
-    <Section>
-      <Info title="Languages">
-        <div v-for="item in languages" :key="item.id">{{ item.label }} | {{ item.status }}</div>
-      </Info>
-    </Section>
-    <Section>
-      <Info title="Hobbies">
-        <div v-for="item in hobbies" :key="item.id">{{ item.label }}</div>
-      </Info>
-    </Section>
-    <Section>
-      <Info title="Personalities">
-        <div v-for="item in personalities" :key="item.id">{{ item.label }}</div>
-      </Info>
-    </Section> -->
+    <nav class="p-about__nav">
+      <div :class="{ 'p-about__nav-item': true, 'p-about__nav-item--active': currentPosition === item.position }"
+           v-for="item in sections"
+           :key="item.id"
+           @click="handleClickNavItem(item.position)"></div>
+    </nav>
   </div>
 </template>
 
 <script>
-import { introductions, skills, languages, hobbies, personalities } from '@/data.json'
+import { mapState, mapActions } from 'vuex'
+import {
+  UPDATE_POSITION,
+  UPDATE_SLIDE_DIRECTION,
+  UPDATE_TRANSITION_STATE
+} from '@/store/action-types'
 
 export default {
   name: 'p-about',
   components: {
     Section: () => import('@/components/Section/Section.vue'),
-    Banner: () => import('@/components/Banner/Banner.vue'),
-    Info: () => import('@/components/Info/Info.vue')
+    Banner: () => import('@/components/About/Banner.vue'),
+    Introductions: () => import('@/components/About/Introductions.vue'),
+    Skills: () => import('@/components/About/Skills.vue'),
+    Hobbies: () => import('@/components/About/Hobbies.vue'),
+    Languages: () => import('@/components/About/Languages.vue'),
+    Personalities: () => import('@/components/About/Personalities.vue')
   },
   data () {
     return {
-      introductions,
-      skills,
-      languages,
-      hobbies,
-      personalities,
-      selectedSection: 'banner',
-      scrollY: 0
+      transitionTime: 1000 // ms
     }
   },
+  computed: {
+    ...mapState({
+      sections: state => state.about.sections,
+      slideDirection: state => state.about.slideDirection,
+      currentPosition: state => state.about.currentPosition,
+      isTransitioning: state => state.about.isTransitioning
+    })
+  },
   methods: {
+    ...mapActions({
+      _updatePosition: `about/${UPDATE_POSITION}`,
+      _updateSlideDirection: `about/${UPDATE_SLIDE_DIRECTION}`,
+      _updateTransitionState: `about/${UPDATE_TRANSITION_STATE}`
+    }),
     handleWheel (event) {
-      // Scroll down
-      if (event.wheelDelta < 0) {
-        this.selectedSection = 'intro'
-      } else {
-        this.selectedSection = 'banner'
+      if (!this.isTransitioning) {
+        // Disable scroll
+        this._updateTransitionState(true)
+        // Enable after transition finish
+        setTimeout(() => {
+          this._updateTransitionState(false)
+        }, this.transitionTime)
+        // Execute transition
+        if (event.wheelDelta < -100 && this.currentPosition < this.sections.length - 1) {
+          // Scroll down
+          this._updatePosition(this.currentPosition + 1)
+          this._updateSlideDirection('slide-up')
+        } else if (event.wheelDelta > 100 && this.currentPosition > 0) {
+          // Scroll up
+          this._updatePosition(this.currentPosition - 1)
+          this._updateSlideDirection('slide-down')
+        }
       }
+    },
+    handleClickNavItem (position) {
+      this._updateSlideDirection(position > this.currentPosition ? 'slide-up' : 'slide-down')
+      this._updatePosition(position)
     }
   },
   mounted () {
-
   }
 }
 </script>
@@ -82,6 +87,46 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  &__nav {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-50%);
+    &-item {
+      position: relative;
+      overflow: hidden;
+      margin: 0.5rem 0;
+      width: 0.5rem;
+      height: 1.5rem;
+      cursor: pointer;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-white;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-main;
+        transition: all 0.5s ease;
+      }
+      &--active {
+        &:after {
+          top: 0;
+        }
+      }
+    }
+  }
 }
 
 .p-skills {
