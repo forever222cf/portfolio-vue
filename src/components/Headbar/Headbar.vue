@@ -1,12 +1,12 @@
 <template>
   <div :class="headbarClass" v-scroll="handleScroll">
-    <div class="p-headbar__logo">
+    <div class="p-headbar__item p-headbar__item--logo">
       <Logo />
     </div>
-    <div class="p-headbar__menu">
+    <div class="p-headbar__item p-headbar__item--menu">
       <Menu />
     </div>
-    <div class="p-headbar__social">
+    <div class="p-headbar__item p-headbar__item--social">
       <Social />
     </div>
   </div>
@@ -58,15 +58,17 @@ export default {
   align-items: center;
   transition: all 0.3s ease;
   &--stick {
-    backdrop-filter: saturate(180%) blur(20px);
-    background-color: adjust-color($color-bg, $alpha: -0.3);
+    // backdrop-filter: saturate(180%) blur(20px);
+    // background-color: adjust-color($color-bg, $alpha: -0.3);
   }
-  &__menu {
-    margin-left: 4rem;
-  }
-  &__social {
-    margin-left: auto;
-    margin-right: 0;
+  &__item {
+    flex: 1 0 auto;
+    &--logo {
+    }
+    &--menu {
+    }
+    &--social {
+    }
   }
 }
 </style>

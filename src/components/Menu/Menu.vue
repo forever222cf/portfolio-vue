@@ -22,12 +22,12 @@ export default {
         {
           id: '1',
           href: '/',
-          label: 'All projects'
+          label: 'Projects'
         },
         {
           id: '2',
           href: '/about',
-          label: 'About me'
+          label: 'About'
         }
       ]
     }
@@ -38,6 +38,7 @@ export default {
 <style lang="scss" scoped>
 .p-menu {
   display: flex;
+  justify-content: center;
   &__item {
     font-weight: 700;
     padding: 0.5rem 1rem;

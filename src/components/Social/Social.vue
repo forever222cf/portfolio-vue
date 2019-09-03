@@ -1,6 +1,6 @@
 <template>
   <div class="p-social">
-    <div class="p-social__list" :style="socialListStyle">
+    <div class="p-social__list">
       <a class="p-social__item" v-for="item in socialList" :key="item.id" :href="item.href" target="_blank">
         <Icon :name="item.iconName" />
       </a>
@@ -32,13 +32,6 @@ export default {
         }
       ]
     }
-  },
-  computed: {
-    socialListStyle () {
-      return {
-        gridTemplateColumns: `repeat(${this.socialList.length}, 1fr)`
-      }
-    }
   }
 }
 </script>
@@ -46,10 +39,12 @@ export default {
 <style lang="scss" scoped>
 .p-social {
   &__list {
-    display: grid;
-    grid-gap: 0 1rem;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 -0.5rem;
   }
   &__item {
+    padding: 0 0.5rem;
     color: $color-white;
     &:hover {
       color: $color-main;

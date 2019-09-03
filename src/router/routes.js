@@ -18,7 +18,10 @@ export const routes = [
   {
     path: '/about',
     name: 'about',
-    component: lazyLoad('About')
+    component: lazyLoad('About'),
+    meta: {
+      isSectionFullPage: true
+    }
   },
   {
     path: '/gsap',

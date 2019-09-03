@@ -8,6 +8,9 @@
 </template>
 
 <script>
+// Use in:
+//  - @/views/About.vue
+
 export default {
   name: 'p-info',
   props: {
@@ -36,7 +39,6 @@ export default {
     text-transform: uppercase;
   }
   &__content {
-
   }
 }
 </style>
