@@ -22,7 +22,8 @@ export default {
 <style lang="scss" scoped>
 .p-banner {
   display: flex;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   color: $color-white;
   background-color: darken($color-bg, 10%);
   &__avatar {

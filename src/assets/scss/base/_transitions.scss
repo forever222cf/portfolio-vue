@@ -126,12 +126,12 @@
   &-enter {
     transform: translateY(100%);
     &-active {
-      transition: all 1s linear;
+      transition: all 1s cubic-bezier(0.8, 0.8, 0, 1);
     }
   }
   &-leave {
     &-active {
-      transition: all 1s linear;
+      transition: all 1s cubic-bezier(0.8, 0.8, 0, 1);
     }
     &-to {
       transform: translateY(-100%);
@@ -151,12 +151,12 @@
   &-enter {
     transform: translateY(-100%);
     &-active {
-      transition: all 1s linear;
+      transition: all 1s cubic-bezier(0.8, 0.8, 0, 1);
     }
   }
   &-leave {
     &-active {
-      transition: all 1s linear;
+      transition: all 1s cubic-bezier(0.8, 0.8, 0, 1);
     }
     &-to {
       transform: translateY(100%);

@@ -9,7 +9,11 @@
       <div :class="{ 'p-about__nav-item': true, 'p-about__nav-item--active': currentPosition === item.position }"
            v-for="item in sections"
            :key="item.id"
-           @click="handleClickNavItem(item.position)"></div>
+           @click="handleClickNavItem(item.position)">
+        <svg class="p-about__nav-item-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <circle class="p-about__nav-item-circle" cx="12" cy="12" r="11" stroke-width="1" stroke="currentColor" fill="transparent"></circle>
+        </svg>
+      </div>
     </nav>
   </div>
 </template>
@@ -90,7 +94,7 @@ export default {
   &__nav {
     position: absolute;
     top: 50%;
-    right: 2rem;
+    right: 1.5rem;
     display: flex;
     flex-direction: column;
     transform: translateY(-50%);
@@ -98,32 +102,42 @@ export default {
       position: relative;
       overflow: hidden;
       margin: 0.5rem 0;
-      width: 0.5rem;
+      width: 1.5rem;
       height: 1.5rem;
       cursor: pointer;
+      color: $color-white;
       &:before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 50%;
+        left: 50%;
+        width: 0.375rem;
+        height: 0.375rem;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
         background-color: $color-white;
       }
-      &:after {
-        content: '';
-        position: absolute;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $color-main;
-        transition: all 0.5s ease;
-      }
       &--active {
-        &:after {
-          top: 0;
+        color: $color-main;
+        &:before {
+          background-color: $color-main;
         }
+        .p-about__nav-item {
+          &-svg {
+            transform: rotate(450deg);
+          }
+          &-circle {
+            stroke-dashoffset: 0;            
+          }
+        }
+      }
+      &-svg {
+        transition: transform 1.5s cubic-bezier(0.4, 0.4, 0, 1);
+      }
+      &-circle {
+        stroke-dasharray: 70;
+        stroke-dashoffset: 70;
+        transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0.4, 0, 1);
       }
     }
   }
