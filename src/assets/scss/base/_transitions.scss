@@ -10,8 +10,10 @@
 *
 *  01. Fade
 *  02. Slide
-*  03. Slide Right
-*  04. Slide Left
+*  03. Slide Up Delay
+*  04. Slide Down Delay
+*  05. Slide Up
+*  06. Slide Down
 *
 */
 
@@ -21,19 +23,17 @@
 ================================*/
 
 .fade {
-  &-enter {
-    opacity: 0;
-    &-active {
-      transition: opacity 0.5s;
-    }
-  }
+  &-enter,
   &-leave {
     &-active {
-      transition: opacity 0.5s;
+      transition: all 0.5s ease;
     }
-    &-to {
-      opacity: 0;
-    }
+  }
+  &-enter {
+    opacity: 0;
+  }
+  &-leave-to {
+    opacity: 0;
   }
 }
 
@@ -45,77 +45,71 @@
 =================================*/
 
 .slide {
-  &-enter {
-    opacity: 0;
-    transform: translateX(-1.5rem);
-    &-active {
-      transition: all 0.5s ease;
-    }
-  }
+  &-enter,
   &-leave {
     &-active {
       transition: all 0.5s ease;
     }
-    &-to {
-      opacity: 0;
-      transform: translateX(1.5rem);
-    }
+  }
+  &-enter {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+  }
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(1.5rem);
   }
 }
 
 /*=====  End of 02. Slide  ======*/
 
 
-/*=======================================
-=            03. Slide Right            =
-=======================================*/
+/*=========================================
+=            03. Slide Up Delay           =
+=========================================*/
 
-.slide-right {
-  &-enter {
-    opacity: 0;
-    transform: translateX(-1.5rem);
-    &-active {
-      transition: all 0.5s ease;
-    }
-  }
+.slide-up-delay {
+  &-enter,
   &-leave {
     &-active {
-      transition: all 0.5s ease;
+      transition: all 0.3s linear;
     }
-    &-to {
-      opacity: 0;
-      transform: translateX(1.5rem);
-    }
+  }
+  &-enter {
+    transform: translateY(100%);
+  }
+  &-leave-to {
+    transform: translateY(-100%);
   }
 }
 
-/*=====  End of 03. Slide Right  ======*/
+/*=====  End of 03. Slide Up Delay  ======*/
 
 
-/*======================================
-=            04. Slide Left            =
-======================================*/
 
-.slide-left {
-  &-enter {
-    opacity: 0;
-    transform: translateX(1.5rem);
-    &-active {
-      transition: all 0.5s ease;
-    }
-  }
+/*===========================================
+=            04. Slide Down Delay           =
+===========================================*/
+
+.slide-down-delay {
+  &-enter,
   &-leave {
     &-active {
-      transition: all 0.5s ease;
+      transition: all 0.3s ease-out 0.75s;
     }
-    &-to {
-      opacity: 0;
-      transform: translateX(-1.5rem);
-    }
+  }
+  &-enter {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  &-leave-to {
+    opacity: 0;
+    transform: translateY(100%);
   }
 }
 
-/*=====  End of 04. Slide Left  =====*/
+/*=====  End of 04. Slide Down Delay  ======*/
+
 
 
 /*====================================
@@ -123,19 +117,17 @@
 ====================================*/
 
 .slide-up {
-  &-enter {
-    transform: translateY(100%);
-    &-active {
-      transition: all 1s cubic-bezier(0.8, 0.8, 0, 1);
-    }
-  }
+  &-enter,
   &-leave {
     &-active {
       transition: all 1s cubic-bezier(0.8, 0.8, 0, 1);
     }
-    &-to {
-      transform: translateY(-100%);
-    }
+  }
+  &-enter {
+    transform: translateY(100%);
+  }
+  &-leave-to {
+    transform: translateY(-100%);
   }
 }
 
@@ -148,19 +140,17 @@
 ======================================*/
 
 .slide-down {
-  &-enter {
-    transform: translateY(-100%);
-    &-active {
-      transition: all 1s cubic-bezier(0.8, 0.8, 0, 1);
-    }
-  }
+  &-enter,
   &-leave {
     &-active {
       transition: all 1s cubic-bezier(0.8, 0.8, 0, 1);
     }
-    &-to {
-      transform: translateY(100%);
-    }
+  }
+  &-enter {
+    transform: translateY(-100%);
+  }
+  &-leave-to {
+    transform: translateY(100%);
   }
 }
 

@@ -28,8 +28,8 @@ export default {
 <style lang="scss" scoped>
 .p-icon {
   display: flex;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   svg {
     width: 100%;
     height: 100%;

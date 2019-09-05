@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import example from './modules/example'
 import about from './modules/about'
+import transition from './modules/transition'
 
 import { UPDATE_WELCOME_STATE } from './action-types'
 
@@ -30,6 +31,7 @@ export default new Vuex.Store({
   actions,
   modules: {
     example,
-    about
+    about,
+    transition
   }
 })

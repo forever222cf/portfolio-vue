@@ -29,4 +29,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.p-skills {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
 </style>

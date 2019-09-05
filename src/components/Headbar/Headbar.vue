@@ -1,5 +1,5 @@
 <template>
-  <div :class="headbarClass" v-scroll="handleScroll">
+  <div class="p-headbar">
     <div class="p-headbar__item p-headbar__item--logo">
       <Logo />
     </div>
@@ -14,7 +14,7 @@
 
 <script>
 // Use in:
-//  - @/App.vue
+//  - @/components/Header/Header.vue
 
 export default {
   name: 'p-headbar',
@@ -25,20 +25,6 @@ export default {
   },
   data () {
     return {
-      isPassBanner: false
-    }
-  },
-  computed: {
-    headbarClass () {
-      return {
-        'p-headbar': true,
-        'p-headbar--stick': this.isPassBanner
-      }
-    }
-  },
-  methods: {
-    handleScroll (event, el) {
-      this.isPassBanner = window.scrollY > window.innerHeight - el.clientHeight
     }
   }
 }
@@ -46,21 +32,10 @@ export default {
 
 <style lang="scss" scoped>
 .p-headbar {
-  position: fixed;
-  z-index: $z-index-headbar;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 2vh 5rem;
-  margin: 0 auto;
-  min-height: 10vh;
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
-  &--stick {
-    // backdrop-filter: saturate(180%) blur(20px);
-    // background-color: adjust-color($color-bg, $alpha: -0.3);
-  }
+  max-width: 1400px;
+  margin: 0 auto;
   &__item {
     flex: 1 0 auto;
     &--logo {

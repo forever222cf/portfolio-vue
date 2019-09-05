@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Welcome />
-    <Headbar v-if="!isWelcoming" />
+    <Header v-if="!isWelcoming" />
     <main id="main" v-if="!isWelcoming">
       <transition name="fade" mode="out-in">
         <router-view />
@@ -16,7 +16,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'p-app',
   components: {
-    Headbar: () => import('@/components/Headbar/Headbar.vue'),
+    Header: () => import('@/components/Header/Header.vue'),
     Welcome: () => import('@/components/Welcome/Welcome.vue')
   },
   computed: {
