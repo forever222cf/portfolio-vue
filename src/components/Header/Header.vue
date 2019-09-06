@@ -3,8 +3,8 @@
     <transition :name="transitionName">
       <Headbar v-show="currentPosition < 1" />
     </transition>
-    <HeaderHamburger @onClickHamburger="handleClickHamburger" />
-    <HeaderClose @onClickHamburger="handleClickClose" />
+    <HeaderHamburger />
+    <HeaderClose />
     <HeaderPanel />
   </header>
 </template>
@@ -18,14 +18,13 @@ import { mapState } from 'vuex'
 export default {
   name: 'p-header',
   components: {
-    Headbar: () => import('@/components/Headbar/Headbar.vue'),
+    Headbar: () => import('./Headbar.vue'),
     HeaderHamburger: () => import('./Hamburger.vue'),
     HeaderClose: () => import('./Close.vue'),
     HeaderPanel: () => import('./Panel.vue')
   },
   data () {
     return {
-      isShowHeaderPanel: false
     }
   },
   computed: {
@@ -36,14 +35,6 @@ export default {
     transitionName () {
       return `slide-${this.slideDirection}-delay`
     }
-  },
-  methods: {
-    handleClickHamburger () {
-      this.isShowHeaderPanel = true
-    },
-    handleClickClose () {
-      this.isShowHeaderPanel = false
-    }
   }
 }
 </script>
@@ -51,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 .p-header {
   position: fixed;
-  z-index: $z-index-headbar;
+  z-index: $z-index-header;
   top: 0;
   left: 0;
   right: 0;

@@ -1,5 +1,6 @@
 // Root
 export const UPDATE_WELCOME_STATE = 'UPDATE_WELCOME_STATE'
+export const UPDATE_HEADER_STATE = 'UPDATE_HEADER_STATE'
 
 // About
 

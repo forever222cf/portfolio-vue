@@ -3,8 +3,11 @@
 </template>
 
 <script>
+import BaseView from '@/mixins/BaseView'
+
 export default {
   name: 'p-home',
+  mixins: [BaseView],
   data () {
     return {
     }

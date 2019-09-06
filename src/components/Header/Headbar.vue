@@ -1,12 +1,12 @@
 <template>
   <div class="p-headbar">
-    <div class="p-headbar__item p-headbar__item--logo">
+    <div class="p-headbar__item">
       <Logo />
     </div>
-    <div class="p-headbar__item p-headbar__item--menu">
+    <div class="p-headbar__item">
       <Menu />
     </div>
-    <div class="p-headbar__item p-headbar__item--social">
+    <div class="p-headbar__item">
       <Social />
     </div>
   </div>
@@ -38,12 +38,6 @@ export default {
   margin: 0 auto;
   &__item {
     flex: 1 0 auto;
-    &--logo {
-    }
-    &--menu {
-    }
-    &--social {
-    }
   }
 }
 </style>

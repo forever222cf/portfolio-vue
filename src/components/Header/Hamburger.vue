@@ -10,7 +10,8 @@
 // Use in:
 //  - @/components/Header/Header.vue
 
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
+import { UPDATE_HEADER_STATE } from '@/store/action-types'
 import { TimelineLite } from 'gsap'
 
 export default {
@@ -22,7 +23,8 @@ export default {
   computed: {
     ...mapState({
       slideDirection: state => state.transition.slideDirection,
-      currentPosition: state => state.transition.currentPosition
+      currentPosition: state => state.transition.currentPosition,
+      isShowHeaderPanel: state => state.isShowHeaderPanel
     }),
     hamburgerClass () {
       return {
@@ -34,18 +36,26 @@ export default {
   watch: {
     currentPosition (newVal, oldVal) {
       if (newVal > 0 && oldVal === 0) {
-        // Enter
-        this._showHamburger()
+        this._showHamburger(0.8)
       } else if (newVal === 0) {
-        // Leave
         this._hideHamburger()
+      }
+    },
+    isShowHeaderPanel (newVal, oldVal) {
+      if (newVal) {
+        this._hideHamburger()
+      } else if (!newVal && this.currentPosition > 0) {
+        this._showHamburger(1.2)
       }
     }
   },
   methods: {
-    _showHamburger () {
+    ...mapActions({
+      _updateHeaderState: UPDATE_HEADER_STATE
+    }),
+    _showHamburger (delay) {
       let main = new TimelineLite({
-        delay: 0.75
+        delay: delay
       })
       main.to(this.$refs.secondLine, 0.4, { opacity: 1, x: '32px', ease: 'Power2.easeOut' })
       main.to(this.$refs.firstLine, 0.4, { opacity: 1, x: '32px', ease: 'Power2.easeOut' }, '-=0.2')
@@ -62,7 +72,7 @@ export default {
       main.to(this.$refs.thirdLine, 0, { opacity: 0, x: '0%' })
     },
     handleClickHamburger () {
-      this.$emit('onClickHamburger')
+      this._updateHeaderState(true)
     }
   }
 }

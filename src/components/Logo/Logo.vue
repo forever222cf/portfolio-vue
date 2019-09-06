@@ -1,15 +1,60 @@
 <template>
-  <div class="p-logo">
-    <div class="p-logo__text">L</div>
+  <div ref="logo" :class="logoClass">
+    <router-link to="/" class="p-logo__link">
+      <div class="p-logo__text">L</div>
+    </router-link>
   </div>
 </template>
 
 <script>
 // Use in:
-//  - @/components/Headbar/Headbar.vue
+//  - @/components/Header/Headbar.vue
+//  - @/components/Header/HeaderPanel.vue
+
+import { mapState } from 'vuex'
+import { TimelineLite } from 'gsap'
 
 export default {
-  name: 'p-logo'
+  name: 'p-logo',
+  props: {
+    inPanel: Boolean
+  },
+  computed: {
+    ...mapState({
+      isShowHeaderPanel: state => state.isShowHeaderPanel
+    }),
+    logoClass () {
+      return {
+        'p-logo': true,
+        'p-logo--panel': this.inPanel
+      }
+    }
+  },
+  watch: {
+    isShowHeaderPanel (newVal, oldVal) {
+      if (this.inPanel) {
+        if (newVal) {
+          this._showLogo()
+        } else {
+          this._hideLogo()
+        }
+      }
+    }
+  },
+  methods: {
+    _showLogo () {
+      let main = new TimelineLite({
+        delay: 0.8
+      })
+      main.to(this.$refs.logo, 0.4, { opacity: 1, left: '0' })
+    },
+    _hideLogo () {
+      let main = new TimelineLite()
+      main.to(this.$refs.logo, 0.4, { opacity: 0, left: '40px' })
+      // Reset position
+      main.to(this.$refs.logo, 0, { opacity: 0, left: '-40px' })
+    }
+  }
 }
 </script>
 
@@ -20,11 +65,24 @@ export default {
   font-size: 2rem;
   line-height: 1;
   font-weight: 700;
-  color: $color-white;
   border: 2px solid $color-white;
   font-family: $ff-RobotoSlab;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-flex;
+  &--panel {
+    position: relative;
+    left: -40px;
+    opacity: 0;
+    width: 4rem;
+    height: 4rem;
+    font-size: 3rem;
+  }
+  &__link {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: center;
+    color: $color-white;
+    align-items: center;
+  }
 }
 </style>
