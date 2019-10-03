@@ -43,5 +43,6 @@ export default new Vuex.Store({
     example,
     about,
     transition
-  }
+  },
+  strict: process.env.NODE_ENV !== 'production'
 })
